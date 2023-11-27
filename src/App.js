@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Avatar } from './Avatar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Canvas>
+        <OrbitControls />
+        {/* <ambientLight  position={[1, 0, 0]} /> */}
+        <pointLight position={[2, 2, 2]}  intensity={20}/>
+        {/* <mesh>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color="hotpink" />
+        </mesh> */}
+        <Avatar />
+      </Canvas>
     </div>
   );
 }
